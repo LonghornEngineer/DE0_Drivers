@@ -1,0 +1,41 @@
+
+State Machine - |sdram|sdram_rw:rw_inst|state
+Name state.READ_WAIT_ST state.START_READ_ST state.WRITE_WAIT_ST state.WAIT_READ_ACK_ST state.READ_ST state.WAIT_WRITE_ACK_ST state.WRITE_ST state.START_WRITE_ST state.DONE_ST 
+state.START_WRITE_ST 0 0 0 0 0 0 0 0 0 
+state.WRITE_ST 0 0 0 0 0 0 1 1 0 
+state.WAIT_WRITE_ACK_ST 0 0 0 0 0 1 0 1 0 
+state.READ_ST 0 0 0 0 1 0 0 1 0 
+state.WAIT_READ_ACK_ST 0 0 0 1 0 0 0 1 0 
+state.WRITE_WAIT_ST 0 0 1 0 0 0 0 1 0 
+state.START_READ_ST 0 1 0 0 0 0 0 1 0 
+state.READ_WAIT_ST 1 0 0 0 0 0 0 1 0 
+state.DONE_ST 0 0 0 0 0 0 0 1 1 
+
+State Machine - |sdram|sdram_controller:sdram_controller_inst|current_state
+Name current_state.WAIT_PRE_ST current_state.PRE_ST current_state.READ_PRE_ST current_state.READ4_ST current_state.READ3_ST current_state.READ2_ST current_state.READ1_ST current_state.READ0_ST current_state.WRITE_PRE_ST current_state.WRITE1_ST current_state.WRITE0_ST current_state.WAIT_ACT_ST current_state.ACT_ST current_state.REFRESH_WAIT_ST current_state.REFRESH_ST current_state.IDLE_ST 
+current_state.IDLE_ST 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_state.REFRESH_ST 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+current_state.REFRESH_WAIT_ST 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+current_state.ACT_ST 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+current_state.WAIT_ACT_ST 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+current_state.WRITE0_ST 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+current_state.WRITE1_ST 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+current_state.WRITE_PRE_ST 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_state.READ0_ST 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+current_state.READ1_ST 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+current_state.READ2_ST 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+current_state.READ3_ST 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+current_state.READ4_ST 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.READ_PRE_ST 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.PRE_ST 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+current_state.WAIT_PRE_ST 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |sdram|sdram_controller:sdram_controller_inst|current_init_state
+Name current_init_state.INIT_DONE_ST current_init_state.INIT_WAIT_MODE_REG current_init_state.INIT_MODE_REG current_init_state.INIT_WAIT_PRE current_init_state.INIT_INIT_PRE current_init_state.INIT_WAIT_200us current_init_state.INIT_IDLE 
+current_init_state.INIT_IDLE 0 0 0 0 0 0 0 
+current_init_state.INIT_WAIT_200us 0 0 0 0 0 1 1 
+current_init_state.INIT_INIT_PRE 0 0 0 0 1 0 1 
+current_init_state.INIT_WAIT_PRE 0 0 0 1 0 0 1 
+current_init_state.INIT_MODE_REG 0 0 1 0 0 0 1 
+current_init_state.INIT_WAIT_MODE_REG 0 1 0 0 0 0 1 
+current_init_state.INIT_DONE_ST 1 0 0 0 0 0 1 

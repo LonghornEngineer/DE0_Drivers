@@ -1,0 +1,38 @@
+module DE0_7_Segment_Test
+(
+	clk_50, number, HEX0, HEX1, HEX2, HEX3
+);
+	
+input		wire				clk_50;	
+
+output	reg	[15:0]	number;
+	
+output	reg	[7:0]		HEX0;
+output	reg	[7:0]		HEX1;
+output	reg	[7:0]		HEX2;
+output	reg	[7:0]		HEX3;
+
+	
+initial
+	begin
+	
+		
+	end
+	
+always @(posedge clk_50)
+	begin
+		number <= 4'h0000;
+	end
+	
+	de0_7_segment segment_driver
+	(
+		.clk_50(clk_50), 
+		.value(number), 
+		.HEX0(HEX0), 
+		.HEX1(HEX1), 
+		.HEX2(HEX2), 
+		.HEX3(HEX3)
+	
+	);
+	
+endmodule;
