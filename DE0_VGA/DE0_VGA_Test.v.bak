@@ -1,0 +1,4 @@
+module DE0_VGA_Test 
+(
+	 clk_50, INPUT_SWS, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS
+);
