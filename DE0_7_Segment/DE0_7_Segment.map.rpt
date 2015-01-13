@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_7_Segment
-Thu Aug 14 19:30:24 2014
+Mon Jan 12 22:54:17 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,7 +43,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Aug 14 19:30:24 2014           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 12 22:54:17 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_7_Segment                                   ;
 ; Top-level Entity Name              ; DE0_7_Segment_Test                              ;
@@ -159,14 +159,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; DE0_7_Segment_Test.v             ; yes             ; User Verilog HDL File  ; C:/Users/Parker/Documents/GitHub/DE0_7_Segment/DE0_7_Segment_Test.v ;         ;
-; DE0_7_Segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Parker/Documents/GitHub/DE0_7_Segment/DE0_7_Segment.v      ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                  ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
+; DE0_7_Segment_Test.v             ; yes             ; User Verilog HDL File  ; C:/Users/Parker/Documents/GitHub/DE0_Drivers/DE0_7_Segment/DE0_7_Segment_Test.v ;         ;
+; DE0_7_Segment.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Parker/Documents/GitHub/DE0_Drivers/DE0_7_Segment/DE0_7_Segment.v      ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -257,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -267,15 +267,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Aug 14 19:30:22 2014
+    Info: Processing started: Mon Jan 12 22:54:14 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_7_Segment -c DE0_7_Segment
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file de0_7_segment_test.v
     Info (12023): Found entity 1: DE0_7_Segment_Test
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(22): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(23): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(24): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(25): truncated literal to match 2 bits
+Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(28): truncated literal to match 2 bits
+Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(29): truncated literal to match 2 bits
+Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(30): truncated literal to match 2 bits
+Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(31): truncated literal to match 2 bits
 Info (12021): Found 1 design units, including 1 entities, in source file de0_7_segment.v
     Info (12023): Found entity 1: DE0_7_Segment
 Info (12127): Elaborating entity "DE0_7_Segment_Test" for the top level hierarchy
@@ -290,8 +290,8 @@ Info (21057): Implemented 132 device resources after synthesis - the final resou
     Info (21061): Implemented 99 logic cells
 Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 346 megabytes
-    Info: Processing ended: Thu Aug 14 19:30:24 2014
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Mon Jan 12 22:54:18 2015
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

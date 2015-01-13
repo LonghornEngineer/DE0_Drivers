@@ -1,3 +1,8 @@
+//	DE0_7_Segment.v
+//	Author: Parker Dillmann
+//	Website: http://www.longhornengineer.com
+// Github: https://github.com/LonghornEngineer
+
 module DE0_7_Segment
 (
 	 clk_50, value, HEX0, HEX1, HEX2, HEX3
@@ -19,6 +24,7 @@ output	reg	[7:0]		HEX3;
 
 initial
 	begin
+		//High value is off for the LEDs
 		HEX0 <= 2'hFF;
 		HEX1 <= 2'hFF;
 		HEX2 <= 2'hFF;
@@ -26,6 +32,7 @@ initial
 		
 		out_value <= 4'h0000;
 		
+		//Mapping to display Hex
 		Seg_Mapping[00] <= 8'b1100_0000;
 		Seg_Mapping[01] <= 8'b1111_1001;
 		Seg_Mapping[02] <= 8'b1010_0100;
@@ -47,6 +54,7 @@ initial
 	
 always @(posedge clk_50)
 	begin
+		//Check if we have to change value. Prevents flickering.
 		if(out_value != value)
 			begin
 				out_value <= value;

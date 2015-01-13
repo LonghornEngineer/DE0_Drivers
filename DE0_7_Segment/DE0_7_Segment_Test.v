@@ -1,17 +1,22 @@
+//	DE0_7_Segment_Test.v
+//	Author: Parker Dillmann
+//	Website: http://www.longhornengineer.com
+// Github: https://github.com/LonghornEngineer
+
 module DE0_7_Segment_Test
 (
 	clk_50, HEX0, HEX1, HEX2, HEX3
 );
 	
-input		wire				clk_50;	
+input		wire				clk_50;		//50Mhz Clock
 	
-output	reg	[7:0]		HEX0;
-output	reg	[7:0]		HEX1;
-output	reg	[7:0]		HEX2;
-output	reg	[7:0]		HEX3;
+output	reg	[7:0]		HEX0;			//7-Segment LED Display 0
+output	reg	[7:0]		HEX1;			//7-Segment LED Display 1
+output	reg	[7:0]		HEX2;			//7-Segment LED Display 2
+output	reg	[7:0]		HEX3;			//7-Segment LED Display 3
 
-			reg	[31:0]	counter;	
-			reg	[15:0]	number;
+			reg	[31:0]	counter;		//Counter to prevent number from increasing to fast to see.
+			reg	[15:0]	number;		//Number to send to driver to display.
 	
 initial
 	begin
