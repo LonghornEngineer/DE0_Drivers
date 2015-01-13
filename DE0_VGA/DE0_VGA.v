@@ -1,3 +1,8 @@
+//	DE0_VGA.v
+//	Author: Parker Dillmann
+//	Website: http://www.longhornengineer.com
+// Github: https://github.com/LonghornEngineer
+
 module DE0_VGA 
 (
 	 clk_50, pixel_color, VGA_BUS_R, VGA_BUS_G, VGA_BUS_B, VGA_HS, VGA_VS, X_pix, Y_pix, H_visible, V_visible, pixel_clk, pixel_cnt
@@ -42,6 +47,7 @@ parameter VSNC_END		= VSNC_STRT + 3;
 parameter VBCK_PRCH_END	= VSNC_END + 38;
 parameter VVSBL_END		= VBCK_PRCH_END + 1024;
 
+//Use counters to assign X_pix and Y_pix locations. 
 assign X_pix 	= (HS_counter - HBCK_PRCH_END) > 0 ? (HS_counter - HBCK_PRCH_END) : 0;
 assign Y_pix	= (VS_counter - VBCK_PRCH_END) > 0 ? (VS_counter - VBCK_PRCH_END) : 0;
 
@@ -112,7 +118,7 @@ always @(posedge pixel_clk)
 				VGA_HS <= VGA_HS;
 				H_visible <= 1'b0;
 				HS_counter <= 1;
-				if (VS_counter == VVSBL_END)
+				if (VS_counter == VVSBL_END)	//Control VS_counter here to make sure Vertical Sync stays in sync. 
 					begin
 						VS_counter <= 1;
 					end
