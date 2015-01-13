@@ -8,6 +8,6 @@ Quartus II V13.0 Project file: DE0_VGA.qpf
 
 File Hierarchy 
 - DE0_VGA_Test.v
- - DE0_VGA.v
-  - PLL_PIXEL_CLK.v
+  - DE0_VGA.v
+    - PLL_PIXEL_CLK.v
 
