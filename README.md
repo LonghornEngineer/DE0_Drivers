@@ -7,6 +7,7 @@ This repository holds Verilog drivers for the various peripherals on the [Altera
 So far the following peripherals have code for them. Each directory has a different project file for Quartus II V13.0. 
 Each one contains a test routine as the top level Verilog file. 
 
+|---|---|
 | DE0_7_Segment | Drives the 4 7-Segment LED Displays | 
 | DE0_SDRAM | Loads values into SDRAM and reads it back |
 | DE0_VGA | Displays at 1280x1024 @ 60Hz. |
