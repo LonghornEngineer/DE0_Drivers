@@ -25,10 +25,10 @@ output	reg	[7:0]		HEX3;
 initial
 	begin
 		//High value is off for the LEDs
-		HEX0 <= 2'hFF;
-		HEX1 <= 2'hFF;
-		HEX2 <= 2'hFF;
-		HEX3 <= 2'hFF;
+		HEX0 <= 8'hFF;
+		HEX1 <= 8'hFF;
+		HEX2 <= 8'hFF;
+		HEX3 <= 8'hFF;
 		
 		out_value <= 4'h0000;
 		

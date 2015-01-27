@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_7_Segment
-Mon Jan 12 22:54:17 2015
+Tue Jan 27 00:29:45 2015
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,15 +43,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 12 22:54:17 2015           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 27 00:29:45 2015           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_7_Segment                                   ;
 ; Top-level Entity Name              ; DE0_7_Segment_Test                              ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 99                                              ;
+; Total logic elements               ; 95                                              ;
 ;     Total combinational functions  ; 79                                              ;
-;     Dedicated logic registers      ; 88                                              ;
-; Total registers                    ; 88                                              ;
+;     Dedicated logic registers      ; 84                                              ;
+; Total registers                    ; 84                                              ;
 ; Total pins                         ; 33                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -174,7 +174,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 99           ;
+; Estimated Total logic elements              ; 95           ;
 ;                                             ;              ;
 ; Total combinational functions               ; 79           ;
 ; Logic element usage by number of LUT inputs ;              ;
@@ -186,16 +186,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- normal mode                          ; 42           ;
 ;     -- arithmetic mode                      ; 37           ;
 ;                                             ;              ;
-; Total registers                             ; 88           ;
-;     -- Dedicated logic registers            ; 88           ;
+; Total registers                             ; 84           ;
+;     -- Dedicated logic registers            ; 84           ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 33           ;
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ; Maximum fan-out node                        ; clk_50~input ;
-; Maximum fan-out                             ; 88           ;
-; Total fan-out                               ; 557          ;
-; Average fan-out                             ; 2.39         ;
+; Maximum fan-out                             ; 84           ;
+; Total fan-out                               ; 545          ;
+; Average fan-out                             ; 2.38         ;
 +---------------------------------------------+--------------+
 
 
@@ -204,20 +204,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |DE0_7_Segment_Test               ; 79 (40)           ; 88 (40)      ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |DE0_7_Segment_Test                              ; work         ;
-;    |DE0_7_Segment:segment_driver| ; 39 (39)           ; 48 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_7_Segment_Test|DE0_7_Segment:segment_driver ; work         ;
+; |DE0_7_Segment_Test               ; 79 (40)           ; 84 (40)      ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |DE0_7_Segment_Test                              ; work         ;
+;    |DE0_7_Segment:segment_driver| ; 39 (39)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_7_Segment_Test|DE0_7_Segment:segment_driver ; work         ;
 +-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; counter[24..31]                       ; Lost fanout        ;
-; Total Number of Removed Registers = 8 ;                    ;
-+---------------------------------------+--------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; DE0_7_Segment:segment_driver|HEX3[7]   ; Stuck at VCC due to stuck port data_in ;
+; DE0_7_Segment:segment_driver|HEX2[7]   ; Stuck at VCC due to stuck port data_in ;
+; DE0_7_Segment:segment_driver|HEX1[7]   ; Stuck at VCC due to stuck port data_in ;
+; DE0_7_Segment:segment_driver|HEX0[7]   ; Stuck at VCC due to stuck port data_in ;
+; counter[24..31]                        ; Lost fanout                            ;
+; Total Number of Removed Registers = 12 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -225,31 +229,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 88    ;
+; Total registers                              ; 84    ;
 ; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 63    ;
+; Number of registers using Clock Enable       ; 59    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; DE0_7_Segment:segment_driver|HEX0[0]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX0[1]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX1[0]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX1[1]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX2[0]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX2[1]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX3[0]   ; 1       ;
-; DE0_7_Segment:segment_driver|HEX3[1]   ; 1       ;
-; Total number of inverted registers = 8 ;         ;
-+----------------------------------------+---------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; DE0_7_Segment:segment_driver|HEX0[0]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[1]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[2]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[3]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[4]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[5]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX0[6]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[0]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[1]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[2]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[3]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[4]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[5]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX1[6]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[0]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[1]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[2]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[3]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[4]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[5]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX2[6]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[0]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[1]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[2]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[3]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[4]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[5]    ; 1       ;
+; DE0_7_Segment:segment_driver|HEX3[6]    ; 1       ;
+; Total number of inverted registers = 28 ;         ;
++-----------------------------------------+---------+
 
 
 +-------------------------------+
@@ -257,7 +281,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -267,31 +291,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jan 12 22:54:14 2015
+    Info: Processing started: Tue Jan 27 00:29:43 2015
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_7_Segment -c DE0_7_Segment
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file de0_7_segment_test.v
     Info (12023): Found entity 1: DE0_7_Segment_Test
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(28): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(29): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(30): truncated literal to match 2 bits
-Warning (10229): Verilog HDL Expression warning at DE0_7_Segment.v(31): truncated literal to match 2 bits
 Info (12021): Found 1 design units, including 1 entities, in source file de0_7_segment.v
     Info (12023): Found entity 1: DE0_7_Segment
 Info (12127): Elaborating entity "DE0_7_Segment_Test" for the top level hierarchy
 Info (12128): Elaborating entity "DE0_7_Segment" for hierarchy "DE0_7_Segment:segment_driver"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 132 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 99 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info (21061): Implemented 95 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 346 megabytes
-    Info: Processing ended: Mon Jan 12 22:54:18 2015
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Tue Jan 27 00:29:45 2015
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

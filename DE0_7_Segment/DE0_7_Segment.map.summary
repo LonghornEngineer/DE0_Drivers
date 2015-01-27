@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Jan 12 22:54:17 2015
+Analysis & Synthesis Status : Successful - Tue Jan 27 00:29:45 2015
 Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : DE0_7_Segment
 Top-level Entity Name : DE0_7_Segment_Test
 Family : Cyclone III
-Total logic elements : 99
+Total logic elements : 95
     Total combinational functions : 79
-    Dedicated logic registers : 88
-Total registers : 88
+    Dedicated logic registers : 84
+Total registers : 84
 Total pins : 33
 Total virtual pins : 0
 Total memory bits : 0
